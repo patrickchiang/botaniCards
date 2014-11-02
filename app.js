@@ -10,7 +10,7 @@ var pool = mysql.createPool({
     port: 3306,
     user: 'root',
     password: 'root',
-    database: 'node',
+    database: 'botanicards',
     multipleStatements: true
 });
 
@@ -22,6 +22,7 @@ app.get('/create', function (req, res) {
             if (err) throw err;
 
             console.log(rows);
+            res.json(rows);
         });
     });
 });
