@@ -1,18 +1,11 @@
 var express = require('express');
 var mysql = require('mysql');
 var fs = require('fs');
+var config = require('./config.js')
 
 var app = express();
 
-var pool = mysql.createPool({
-    connectionLimit: 10,
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'root',
-    database: 'botanicards',
-    multipleStatements: true
-});
+var pool = mysql.createPool(config.db);
 
 app.get('/create', function (req, res) {
     fs.readFile(__dirname + '/create.sql', 'utf8', function (err, file) {
