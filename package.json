@@ -1,0 +1,9 @@
+{
+  "name": "botanicards-backend",
+  "version": "0.0.1",
+  "description": "BotaniCards backend",
+  "dependencies": {
+    "express": "4.x",
+    "mysql": "2.5.2"
+  }
+}
